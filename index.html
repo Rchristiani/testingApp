@@ -3,13 +3,75 @@
 <head>
 	<meta charset="UTF-8">
 	<title>My Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+	<header>
+		<div class="container">
+			<h1 class="logo">Pandex</h1>
+		</div>
+	</header>
+	<main>
+		<div class="container main">
+			<form class="content">
+				<section>
+					<h2>Step 1: Select a memory plan</h2>
 
-	<div class="container">
-		<h1>Hello Drew</h1>
-	</div>
+					<input type="radio" id="type1" name="step1">
+					<label for="type1">32 GB</label>
+
+					<input type="radio" id="type2" name="step1">
+					<label for="type2">60 GB</label>
+				</section>
+				<div class="dividers"></div>
+				<section>
+					<h2>Step 2: Choose your phone price</h2>
+
+					
+					<input type="radio" id="monthly" name="step2">
+					<label for="monthly">Starting at $75/month
+						<span>$0</span>
+					</label>
+					<input type="radio" id="outright" name="step2">
+					<label for="outright">No term pricing
+						<span>$900</span>
+					</label>
+				</section>
+				<div class="dividers"></div>
+				<section>
+					<h2>Step 3: Build your plan</h2>
+					
+					<input type="radio" id="plan1" name="step3">
+					<label for="plan1">300 local daytime minutes
+						<span>$45/mo</span>
+					</label>
+
+					<input type="radio" id="plan2" name="step3">
+					<label for="plan2">Unlimited local calling
+						<span>$50/mo</span>
+					</label>
+
+					<input type="radio" id="plan3" name="step3">
+					<label for="plan3">Unlimited nationwide calling
+						<span>$55/mo</span>
+					</label>
+				</section>
+			</form>
+			<aside>
+				<h3>Summary</h3>
+				<div class="aside_section">
+					<h4>Due monthly</h4>
+					<span>$0</span>
+				</div>
+			</aside>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			
+		</div>
+	</footer>
 
 	<script src="public/scripts/main.js"></script>
 	

@@ -1,10 +1,122 @@
 @import 'setup';
 
+$accent: #2a54ff;
+
 .container {
 	max-width: 900px;
 	margin: 0 auto;
 }
 
 body {
-	background: darkcyan;
+	// background: darkcyan;
+	font-family: 'Lato', sans-serif;
 }
+
+header {
+	background: $accent;
+	padding: 5px;
+}
+
+h1 {
+	font-size: 20px;
+	color: white;
+}
+
+label {
+	border: 2px solid #afafaf;
+	border-radius: 5px;
+	display: block;
+	padding: 20px 20px 20px 60px;
+	position: relative;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	&:before {
+		content: '';
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		left: 26px;
+		top: 50%;
+		transform: translateY(-50%);
+		border: 2px solid #afafaf;
+		border-radius: 50%;
+	}
+	&:hover {
+		border: 2px solid $accent;
+		&:before {
+			border: 2px solid $accent;
+		}
+	}
+}
+
+input:checked + label:before {
+	background: $accent;
+	border: 2px solid $accent;
+}
+
+input:checked + label:after {
+	content: '';
+	width: 14px;
+	height: 14px;
+	background: white;
+	position: absolute;
+	left: 31px;
+	top: 50%;
+	transform: translatey(-50%);
+	border-radius: 50%;
+
+}
+
+input:checked + label {
+	border: 2px solid $accent;
+}
+
+input {
+	display: none;
+}
+
+section {
+	padding: 40px 0;
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	// border: 3px solid red;
+}
+
+.content {
+	width: 60%;
+}
+
+.dividers {
+	height: 33px;
+	background-image: radial-gradient(ellipse at top,hsla(0,0%,59%,.1) 0,transparent 70%);
+}
+
+aside {
+	box-shadow: 0 0 16px 0 hsla(0,0%,84%,.5);
+	padding: 30px;
+	height: 400px;
+	width: 30%;
+	margin-top: 40px;
+	position: fixed;
+	right: 0px;
+}
+
+aside .aside_section {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid black;
+	justify-content: space-between;
+}
+
+span {
+	// position: absolute;
+	// right: 30px;
+	font-size: 26px;
+}
+
