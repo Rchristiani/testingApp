@@ -9,70 +9,102 @@
 <body>
 	<header>
 		<div class="container">
-			<h1 class="logo">Pandex</h1>
+			<h1 class="logo">TellaPanda</h1>
 		</div>
 	</header>
 	<main>
-		<div class="container main">
-			<form class="content">
-				<section>
+		<form class="container main">
+			<div id="phonePlan" class="content">
+				<section class="clearfix">
 					<h2>Step 1: Select a memory plan</h2>
 
-					<input type="radio" id="type1" name="step1">
-					<label for="type1">32 GB</label>
+					<input class="button" type="radio" id="type1" name="step1" value="0" data-gb="0" data-text="64 GB">
+					<label class="label button" for="type1">64 GB</label>
 
-					<input type="radio" id="type2" name="step1">
-					<label for="type2">60 GB</label>
+					<input class="button" type="radio" id="type2" name="step1" value="200" data-gb="200" data-text="256 GB">
+					<label class="label button" for="type2">256 GB</label>
 				</section>
 				<div class="dividers"></div>
 				<section>
 					<h2>Step 2: Choose your phone price</h2>
 
-					
-					<input type="radio" id="monthly" name="step2">
-					<label for="monthly">Starting at $75/month
+					<input type="radio" id="monthly" name="step2" value="0">
+					<label id="monthlyLabel" class="label" for="monthly">Starting at $95 per month on a 2-year plan
 						<span>$0</span>
 					</label>
-					<input type="radio" id="outright" name="step2">
-					<label for="outright">No term pricing
-						<span>$900</span>
+					<input type="radio" id="outright" name="step2" value="200">
+					<label class="label" for="outright">Starting at $85 per month on a 2-year plan
+						<span>$200</span>
+					</label>
+
+					<input type="radio" id="noTerm" name="step2" value="950">
+					<label class="label" for="noTerm">No term pricing
+						<span>$950</span>
 					</label>
 				</section>
 				<div class="dividers"></div>
 				<section>
 					<h2>Step 3: Build your plan</h2>
 					
-					<input type="radio" id="plan1" name="step3">
-					<label for="plan1">300 local daytime minutes
-						<span>$45/mo</span>
+					<input type="radio" id="plan1" name="step3" value="65">
+					<label class="label" for="plan1">300 local daytime minutes
+						<span>$65/mo</span>
 					</label>
 
-					<input type="radio" id="plan2" name="step3">
-					<label for="plan2">Unlimited local calling
-						<span>$50/mo</span>
+					<input type="radio" id="plan2" name="step3" value="70">
+					<label class="label" for="plan2">Unlimited local calling
+						<span>$70/mo</span>
 					</label>
 
-					<input type="radio" id="plan3" name="step3">
-					<label for="plan3">Unlimited nationwide calling
-						<span>$55/mo</span>
+					<input type="radio" id="plan3" name="step3" value="75">
+					<label class="label" for="plan3">Unlimited nationwide calling
+						<span>$75/mo</span>
 					</label>
 				</section>
-			</form>
+			</div>
 			<aside>
-				<h3>Summary</h3>
+				<p>Summary</p>
+				<div class="aside_section">
+					<h4>Due today</h4>
+					<span class="dueToday" id="dueToday"></span>
+				</div>
 				<div class="aside_section">
 					<h4>Due monthly</h4>
-					<span>$0</span>
+					<span class="dueMonthly" id="dueMonthly"></span>
 				</div>
+				<div class="aside_section">
+					<h6>iPhone 8</h6>
+					<p class="gb" id="gb"></p>
+					<br>
+				</div>
+				<button>Buy now</button>
 			</aside>
-		</div>
+		</form>
 	</main>
 	<footer>
 		<div class="container">
 			
 		</div>
 	</footer>
-
+	<div class="modal">
+		<div class="modal_box">
+			<p>Summary</p>
+			<div class="aside_section">
+				<h4>Due today</h4>
+				<span class="dueToday" id="dueToday"></span>
+			</div>
+			<div class="aside_section">
+				<h4>Due monthly</h4>
+				<span class="dueMonthly" id="dueMonthly"></span>
+			</div>
+			<div class="aside_section">
+				<h6>iPhone 8</h6>
+				<p class="gb" id="gb"></p>
+				<br>
+			</div>
+			<button>Confirm order</button>
+		</div>
+	</div>
 	<script src="public/scripts/main.js"></script>
 	
 </body>
