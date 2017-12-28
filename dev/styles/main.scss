@@ -22,6 +22,12 @@ h1 {
 	color: white;
 }
 
+span {
+	font-size: 26px;
+}
+
+//*********** Form Elements ***********
+
 .label {
 	border: 2px solid #afafaf;
 	border-radius: 5px;
@@ -78,6 +84,22 @@ input[type="radio"] {
 }
 
 
+.label.button {
+	width: 200px;
+	float: left;
+    margin-right: 16px;
+	&:before, &:after {
+		display: none;
+	}
+}
+
+input.button:checked + label {
+	background: $accent;
+	color: white;
+}
+
+//*********** Components ***********
+
 section {
 	padding: 40px 0;
 }
@@ -107,18 +129,15 @@ aside {
 	right: 0px;
 }
 
-aside .aside_section {
+.aside_section {
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid black;
 	justify-content: space-between;
 }
 
-span {
-	// position: absolute;
-	// right: 30px;
-	font-size: 26px;
-}
+
+//*********** Button styles ***********
 
 button {
 	background: $accent;
@@ -126,25 +145,15 @@ button {
 	color: white;
 	margin-top: 20px;
 	width: 100%;
-	border: none; 
+	border: none;
+}
+
+.button-buy {
 	opacity: 0;
 	visibility: hidden;
 }
 
-.label.button {
-	width: 200px;
-	float: left;
-    margin-right: 16px;
-	&:before, &:after {
-		display: none;
-	}
-}
-
-input.button:checked + label {
-	background: $accent;
-	color: white;
-}
-
+//*********** Modal styles ***********
 .modal {
 	position: fixed;
 	width: 100%;
@@ -157,11 +166,23 @@ input.button:checked + label {
 	align-items: center;
 	opacity: 0;
 	visibility: hidden;
+	transition: all 0.4s ease;
 	.modal_box {
 		padding: 40px;
 		width: 500px;
 		background: white;
+		border-radius: 5px;
+		h2 {
+			text-align: center;
+			margin-top: 34px;
+		}
 	}
+}
+
+.fa-times {
+	font-size: 28px;
+	float: right;
+	// color: #afafaf;
 }
 
 .remove {

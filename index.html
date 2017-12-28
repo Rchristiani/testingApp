@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>My Project</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
@@ -66,45 +67,46 @@
 				<p>Summary</p>
 				<div class="aside_section">
 					<h4>Due today</h4>
-					<span class="dueToday" id="dueToday"></span>
+					<span class="dueToday"></span>
 				</div>
 				<div class="aside_section">
 					<h4>Due monthly</h4>
-					<span class="dueMonthly" id="dueMonthly"></span>
+					<span class="dueMonthly"></span>
 				</div>
 				<div class="aside_section">
 					<h6>iPhone 8</h6>
-					<p class="gb" id="gb"></p>
+					<p class="gb"></p>
 					<br>
 				</div>
-				<button>Buy now</button>
+				<button class="button-buy">Buy now</button>
 			</aside>
 		</form>
 	</main>
+	<div class="modal close-modal">
+		<div class="modal_box">
+			<i class="fa fa-times close-modal" aria-hidden="true"></i>
+			<h2>Review your order</h2>
+			<div class="aside_section">
+				<h4>Due today</h4>
+				<span class="dueToday"></span>
+			</div>
+			<div class="aside_section">
+				<h4>Due monthly</h4>
+				<span class="dueMonthly"></span>
+			</div>
+			<div class="aside_section">
+				<h6>iPhone 8</h6>
+				<p class="gb"></p>
+				<br>
+			</div>
+			<button class="button-confirm">Confirm order</button>
+		</div>
+	</div>
 	<footer>
 		<div class="container">
 			
 		</div>
 	</footer>
-	<div class="modal">
-		<div class="modal_box">
-			<p>Summary</p>
-			<div class="aside_section">
-				<h4>Due today</h4>
-				<span class="dueToday" id="dueToday"></span>
-			</div>
-			<div class="aside_section">
-				<h4>Due monthly</h4>
-				<span class="dueMonthly" id="dueMonthly"></span>
-			</div>
-			<div class="aside_section">
-				<h6>iPhone 8</h6>
-				<p class="gb" id="gb"></p>
-				<br>
-			</div>
-			<button>Confirm order</button>
-		</div>
-	</div>
 	<script src="public/scripts/main.js"></script>
 	
 </body>

@@ -148,6 +148,9 @@ h1 {
   font-size: 20px;
   color: white; }
 
+span {
+  font-size: 26px; }
+
 .label {
   border: 2px solid #afafaf;
   border-radius: 5px;
@@ -194,6 +197,17 @@ input:checked + label {
 input[type="radio"] {
   display: none; }
 
+.label.button {
+  width: 200px;
+  float: left;
+  margin-right: 16px; }
+  .label.button:before, .label.button:after {
+    display: none; }
+
+input.button:checked + label {
+  background: #2a54ff;
+  color: white; }
+
 section {
   padding: 40px 0; }
 
@@ -218,14 +232,11 @@ aside {
   position: fixed;
   right: 0px; }
 
-aside .aside_section {
+.aside_section {
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
   justify-content: space-between; }
-
-span {
-  font-size: 26px; }
 
 button {
   background: #2a54ff;
@@ -233,20 +244,11 @@ button {
   color: white;
   margin-top: 20px;
   width: 100%;
-  border: none;
+  border: none; }
+
+.button-buy {
   opacity: 0;
   visibility: hidden; }
-
-.label.button {
-  width: 200px;
-  float: left;
-  margin-right: 16px; }
-  .label.button:before, .label.button:after {
-    display: none; }
-
-input.button:checked + label {
-  background: #2a54ff;
-  color: white; }
 
 .modal {
   position: fixed;
@@ -259,11 +261,20 @@ input.button:checked + label {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  transition: all 0.4s ease; }
   .modal .modal_box {
     padding: 40px;
     width: 500px;
-    background: white; }
+    background: white;
+    border-radius: 5px; }
+    .modal .modal_box h2 {
+      text-align: center;
+      margin-top: 34px; }
+
+.fa-times {
+  font-size: 28px;
+  float: right; }
 
 .remove {
   visibility: hidden;

@@ -9,17 +9,22 @@ const form = document.querySelector('form');
 //updates price for today
 planApp.updateToday = (price) => {
 	planApp.dueToday = price;
-	doc.querySelector('.dueToday').innerHTML = `$ ${planApp.dueToday}`;
+	doc.querySelectorAll('.dueToday')
+		.forEach((item) => {
+			item.innerHTML = `$ ${planApp.dueToday}`;
+		});
 }
 
 //updates price for monthly
 planApp.updateMonthy = (price) => {
 	planApp.dueMonthly = price;
-	doc.querySelector('.dueMonthly').innerHTML = `$ ${planApp.dueMonthly}`;
+	doc.querySelectorAll('.dueMonthly')
+		.forEach((item) => {
+			item.innerHTML = `$ ${planApp.dueMonthly}`;
+		});
 }
 
 planApp.changeEvents = () => {
-
 	//execute when user makes any selection
 	form.addEventListener('change', function(e){
 		const gb = parseInt(e.target.dataset.gb);
@@ -28,7 +33,10 @@ planApp.changeEvents = () => {
 
 		//executes only if there is data text 
 		if(gbText) {
-			doc.getElementById('gb').innerHTML = `${gbText}`;
+			doc.querySelectorAll('.gb')
+				.forEach((item) => {
+					item.innerHTML = `${gbText}`;
+				});
 		}
 		//executes only if element with data-gb attr is selected
 		if( gb !== undefined ) {
@@ -47,11 +55,20 @@ planApp.changeEvents = () => {
 		}
 		else {
 			planApp.updateMonthy(price);
-			doc.querySelector('button').classList.add('show');
+			doc.querySelector('.button-buy').classList.add('show');
 		} 
 	});
+
+	planApp.closeModal();
+
 }
 
+	// doc.querySelector('.closeModal').addEventListener('click', function(){
+	// 	console.log("testing");
+	// 	// doc.querySelector('.modal').classList.remove('show');
+	// });
+
+//Executes when user clicks buy button
 planApp.buyPlan = () => {
 	form.addEventListener('submit', function(e){
 		e.preventDefault();
@@ -59,9 +76,16 @@ planApp.buyPlan = () => {
 	}); 
 }
 
+planApp.closeModal = () => {
+	doc.querySelector('.close-modal').addEventListener('click', function(e){
+		doc.querySelector('.modal').classList.remove('show');
+	});
+}
+
 planApp.init = () => {
 	planApp.buyPlan();
 	planApp.changeEvents();
+	// planApp.closeModal();
 }
 
 // self executing function here / document ready
