@@ -3,8 +3,7 @@ const planApp = {}
 planApp.dueToday = 0;
 planApp.dueMonthly = 0;
 
-const doc = document;
-const form = document.querySelector('form');
+const form = doc.querySelector('form');
 
 //updates price for today
 planApp.updateToday = (price) => {
@@ -63,17 +62,18 @@ planApp.changeEvents = () => {
 
 }
 
-	// doc.querySelector('.closeModal').addEventListener('click', function(){
-	// 	console.log("testing");
-	// 	// doc.querySelector('.modal').classList.remove('show');
-	// });
-
 //Executes when user clicks buy button
 planApp.buyPlan = () => {
 	form.addEventListener('submit', function(e){
 		e.preventDefault();
 		doc.querySelector('.modal').classList.add('show');
 	}); 
+}
+
+planApp.sweetAlert = () => {
+	doc.querySelector('.button-confirm').addEventListener('click', function(){
+		swal("Confirmed", "Great choices, you're ready to buy!", "success");
+	});
 }
 
 planApp.closeModal = () => {
@@ -85,11 +85,11 @@ planApp.closeModal = () => {
 planApp.init = () => {
 	planApp.buyPlan();
 	planApp.changeEvents();
-	// planApp.closeModal();
+	planApp.sweetAlert();
 }
 
 // self executing function here / document ready
-(function() {
-	planApp.init();
+window.onload = planApp.init;
 
-})();
+
+
